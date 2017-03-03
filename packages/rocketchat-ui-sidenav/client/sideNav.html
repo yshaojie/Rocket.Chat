@@ -4,7 +4,6 @@
 			{{> accountBox }}
 		</header>
 		{{#if currentUser}}
-			{{> toolbar}}
 			<div class="unread-rooms background-primary-action-color color-primary-action-contrast top-unread-rooms hidden">
 				{{_ "More_unreads"}} <i class="icon-up-big"></i>
 			</div>
@@ -33,10 +32,6 @@
 					{{> Template.dynamic template=flexTemplate data=flexData}}
 				</section>
 			</div>
-			<span class="arrow bottom"></span>
 		{{/if}}
-		<footer class="footer">
-			{{{footer}}}
-		</footer>
 	</aside>
 </template>

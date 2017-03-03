@@ -1,6 +1,6 @@
 <template name="combined">
 	<h3 class="add-room {{isActive}}">
-		{{_ "Channels"}} <span class="room-count-small">({{rooms.count}})</span>
+		拥有的群组 <span class="room-count-small">({{rooms.count}})</span>
 	</h3>
 	<ul>
 		{{#each rooms}}
@@ -9,5 +9,4 @@
 			<p class="empty">{{_ "No_channels_yet" }}</p>
 		{{/each}}
 	</ul>
-	<button class="more more-channels background-transparent-darker-hover">{{_ "More_channels"}}...</button>
 </template>

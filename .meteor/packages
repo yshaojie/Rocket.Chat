@@ -8,7 +8,6 @@ accounts-facebook
 accounts-github
 accounts-google
 accounts-meteor-developer
-accounts-password
 accounts-twitter
 blaze-html-templates
 check
@@ -166,3 +165,4 @@ underscorestring:underscore.string
 yasaricli:slugify
 yasinuslu:blaze-meta
 deepwell:bootstrap-datepicker2
+accounts-password
