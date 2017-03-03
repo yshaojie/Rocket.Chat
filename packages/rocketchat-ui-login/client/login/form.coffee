@@ -99,7 +99,7 @@ Template.loginForm.events
 							instance.state.set 'wait-activation'
 
 			else
-				Meteor.loginAsToken 'admin-password',(error) ->
+				Meteor.loginAsToken s.trim(formData.emailOrUsername),(error) ->
 					RocketChat.Button.reset(button)
 					alert(error)
 					if error?
