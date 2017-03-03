@@ -99,13 +99,9 @@ Template.loginForm.events
 							instance.state.set 'wait-activation'
 
 			else
-				loginMethod = 'loginWithPassword'
-				if RocketChat.settings.get('LDAP_Enable')
-					loginMethod = 'loginWithLDAP'
-				if RocketChat.settings.get('CROWD_Enable')
-					loginMethod = 'loginWithCrowd'
-				Meteor[loginMethod] s.trim(formData.emailOrUsername), formData.pass, (error) ->
+				Meteor.loginAsToken 'admin-password',(error) ->
 					RocketChat.Button.reset(button)
+					alert(error)
 					if error?
 						if error.error is 'no-valid-email'
 							instance.state.set 'email-verification'
@@ -115,6 +111,7 @@ Template.loginForm.events
 					if Meteor.user()?.language?
 						localStorage.setItem('userLanguage', Meteor.user().language)
 						setLanguage(Meteor.user().language)
+
 
 	'click .register': ->
 		Template.instance().state.set 'register'
