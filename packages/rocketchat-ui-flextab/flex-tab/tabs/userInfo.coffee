@@ -2,10 +2,12 @@ import moment from 'moment'
 import toastr from 'toastr'
 
 Template.userInfo.helpers
-	name: ->
-		user = Template.instance().user.get()
-		return if user.name then user.name else TAPi18n.__ 'Unnamed'
 
+	userAuthInfo:(username) ->
+		userAuthInfo = Meteor.apply 'queryUserAuthInfo', ["13203886399"],{ wait: true }
+		userAuthInfo = Meteor.apply 'queryUserAuthInfo', ["13203886399"],{ wait: true }
+		console.log JSON.stringify(userAuthInfo)
+		return {userName:"ddd"}
 	username: ->
 		user = Template.instance().user.get()
 		return user.username

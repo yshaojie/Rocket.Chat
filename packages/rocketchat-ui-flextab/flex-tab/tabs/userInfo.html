@@ -7,11 +7,18 @@
 		{{else}}
 			{{#with user}}
 			<div class="about clearfix">
-				<div class="thumb">
+				<h1>1234</h1>
+				{{#with userAuthInfo}}
+					<h1>aaa{{userName}}aaa</h1>
+					<h1>ggg{{nameCardPic}}ggg</h1>
+					<h1>ccc{{avatar}}ccc</h1>
+					<h1>aaa{{companyName}}ddd</h1>
+				{{/with}}
+				<h1>1234</h1>
+				<div>
 					{{> avatar username=username}}
 				</div>
 				<div class="info">
-					<h1>在这里添加内容</h1>
 					<h3 title="{{username}}"><i class="status-{{status}}"></i> {{username}}</h3>
 					<p class="secondary-font-color">{{name}}</p>
 					<p class="secondary-font-color">

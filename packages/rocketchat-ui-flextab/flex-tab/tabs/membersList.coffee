@@ -98,7 +98,6 @@ Template.membersList.helpers
 
 	userInfoDetail: ->
 		room = ChatRoom.findOne(this.rid, { fields: { t: 1 } })
-
 		return {
 			tabBar: Template.currentData().tabBar
 			username: Template.instance().userDetail.get()
