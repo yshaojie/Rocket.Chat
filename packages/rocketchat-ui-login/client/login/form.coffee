@@ -101,7 +101,6 @@ Template.loginForm.events
 			else
 				Meteor.loginAsPassword s.trim(formData.emailOrUsername),formData.pass,(error) ->
 					RocketChat.Button.reset(button)
-					alert(error)
 					if error?
 						if error.error is 'no-valid-email'
 							instance.state.set 'email-verification'

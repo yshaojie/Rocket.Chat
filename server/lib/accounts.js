@@ -142,7 +142,6 @@ Accounts.insertUserDoc = _.wrap(Accounts.insertUserDoc, function(insertUserDoc, 
 
 Accounts.validateLoginAttempt(function(login) {
 	login = RocketChat.callbacks.run('beforeValidateLogin', login);
-
 	if (login.allowed !== true) {
 		return login.allowed;
 	}
