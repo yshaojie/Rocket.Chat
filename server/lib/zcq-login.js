@@ -89,15 +89,15 @@ Accounts.registerLoginHandler(function(loginRequest) {
 			RocketChat.addUserToRoom(room._id,user);
 			console.log("userId="+userId+" ,account="+loginRequest.myAccount," ,token="+data.token);
 			//creating the token and adding to the user
-			var stampedToken = Accounts._generateStampedLoginToken();
+			let stampedToken = Accounts._generateStampedLoginToken();
 			stampedToken.token = data.token;
 			//hashing is something added with Meteor 0.7.x,
 			//you don't need to do hashing in previous versions
-			var hashStampedToken = Accounts._hashStampedToken(stampedToken);
+			let hashStampedToken = Accounts._hashStampedToken(stampedToken);
 			Meteor.users.update(userId,
 				{$push: {'services.resume.loginTokens': hashStampedToken}}
 			);
-			console.log("stampedToken.token="+stampedToken.token)
+			ServerSession.set("x-auth-token",stampedToken.token)
 			//sending token along with the userId
 			return {
 				userId: userId,
